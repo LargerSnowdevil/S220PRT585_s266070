@@ -35,3 +35,5 @@ E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\n
 E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\netcoreapp3.1\MVCMovie.pdb
 E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\netcoreapp3.1\MVCMovie.genruntimeconfig.cache
 E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\netcoreapp3.1\MVCMovie.csproj.CopyComplete
+E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\netcoreapp3.1\Razor\Views\HelloWorld\Index.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\week1HelloWorldMVC\MVCMovie\obj\Debug\netcoreapp3.1\Razor\Views\HelloWorld\Welcome.cshtml.g.cs
