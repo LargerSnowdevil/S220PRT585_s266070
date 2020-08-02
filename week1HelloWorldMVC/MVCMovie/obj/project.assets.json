@@ -69,7 +69,7 @@
       "Microsoft.CodeAnalysis.Analyzers/2.9.4": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.CodeAnalysis.Analyzers.props": {}
         }
       },
       "Microsoft.CodeAnalysis.Common/3.3.1": {
@@ -8495,6 +8495,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.CodeAnalysis.Analyzers >= 2.9.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.6",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.6",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.6",
@@ -8502,20 +8503,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\drac1\\.nuget\\packages\\": {}
+    "C:\\Users\\LargerSnowdevil\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
+      "projectUniqueName": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
       "projectName": "MVCMovie",
-      "projectPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
-      "packagesPath": "C:\\Users\\drac1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\obj\\",
+      "projectPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
+      "packagesPath": "C:\\Users\\LargerSnowdevil\\.nuget\\packages\\",
+      "outputPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\drac1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\LargerSnowdevil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8538,6 +8546,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.9.4, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[3.1.6, )"
@@ -8575,7 +8589,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

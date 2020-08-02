@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "MVCMovie/1.0.0": {
         "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "2.9.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.6",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.6",
