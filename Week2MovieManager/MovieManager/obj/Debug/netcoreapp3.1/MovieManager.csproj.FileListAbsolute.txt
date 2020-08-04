@@ -167,3 +167,8 @@ E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debu
 E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Details.cshtml.g.cs
 E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Edit.cshtml.g.cs
 E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Index.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Catagories\Create.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Catagories\Delete.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Catagories\Details.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Catagories\Edit.cshtml.g.cs
+E:\Programming\GitHub\S220PRT585_s266070\Week2MovieManager\MovieManager\obj\Debug\netcoreapp3.1\Razor\Views\Catagories\Index.cshtml.g.cs

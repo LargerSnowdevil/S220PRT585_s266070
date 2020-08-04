@@ -28,6 +28,7 @@ namespace MovieManager.Models
         public String directorName { get; set; }
 
         [Display(Name = "Contact")]
+        [EmailAddress]
         public String contactAdress { get; set; }
 
         [Display(Name = "Language")]
