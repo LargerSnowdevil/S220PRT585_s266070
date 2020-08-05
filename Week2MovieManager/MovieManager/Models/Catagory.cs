@@ -13,8 +13,5 @@ namespace MovieManager.Models
         [Display(Name = "Name")]
         public String name { get; set; }
 
-        [Display(Name = "Code")]
-        public String code { get; set; }
-
     }
 }

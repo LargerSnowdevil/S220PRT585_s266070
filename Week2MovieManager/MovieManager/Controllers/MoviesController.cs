@@ -22,6 +22,14 @@ namespace MovieManager.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
+            //-----------------------------------------------------------------------------------------------------------------------------
+            List<Catagory> catagoryList = new List<Catagory>();
+
+            catagoryList = (from product in _context.Catagorys select product).ToList();
+            catagoryList.Insert(0, new Catagory { id = 0, name = "Select Catagory"});
+
+            ViewBag.Catagories = catagoryList;
+            //-------------------------------------------------------------------------------------------------------------------------------
             return View(await _context.Movies.ToListAsync());
         }
 
