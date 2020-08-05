@@ -34,7 +34,7 @@ namespace MovieManager.Controllers
             }
 
             var catagory = await _context.Catagorys
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.catagoryID == id);
             if (catagory == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace MovieManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,code")] Catagory catagory)
+        public async Task<IActionResult> Create([Bind("catagoryID,name")] Catagory catagory)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace MovieManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,code")] Catagory catagory)
+        public async Task<IActionResult> Edit(int id, [Bind("catagoryID,name")] Catagory catagory)
         {
-            if (id != catagory.id)
+            if (id != catagory.catagoryID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace MovieManager.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CatagoryExists(catagory.id))
+                    if (!CatagoryExists(catagory.catagoryID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace MovieManager.Controllers
             }
 
             var catagory = await _context.Catagorys
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.catagoryID == id);
             if (catagory == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace MovieManager.Controllers
 
         private bool CatagoryExists(int id)
         {
-            return _context.Catagorys.Any(e => e.id == id);
+            return _context.Catagorys.Any(e => e.catagoryID == id);
         }
     }
 }

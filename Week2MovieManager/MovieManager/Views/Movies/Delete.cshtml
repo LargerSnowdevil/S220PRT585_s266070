@@ -42,15 +42,15 @@
             @Html.DisplayFor(model => model.movieLanguage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.catagoryID)
+            @Html.DisplayNameFor(model => model.catagory)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.catagoryID)
-        </dd>
+            @Html.DisplayFor(model => model.catagory.catagoryID)
+        </dd class>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
+        <input type="hidden" asp-for="movieID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

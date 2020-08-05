@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj": {}
+    "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj": {
+    "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
+        "projectUniqueName": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
         "projectName": "MovieManager",
-        "projectPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
-        "packagesPath": "C:\\Users\\LargerSnowdevil\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\obj\\",
+        "projectPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
+        "packagesPath": "C:\\Users\\drac1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LargerSnowdevil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\drac1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -65,7 +60,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.3, )"
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
@@ -86,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

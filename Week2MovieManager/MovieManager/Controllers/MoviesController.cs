@@ -22,7 +22,8 @@ namespace MovieManager.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movies.ToListAsync());
+            var movieDBContext = _context.Movies.Include(m => m.catagory);
+            return View(await movieDBContext.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -34,7 +35,8 @@ namespace MovieManager.Controllers
             }
 
             var movie = await _context.Movies
-                .FirstOrDefaultAsync(m => m.id == id);
+                .Include(m => m.catagory)
+                .FirstOrDefaultAsync(m => m.movieID == id);
             if (movie == null)
             {
                 return NotFound();
@@ -46,6 +48,7 @@ namespace MovieManager.Controllers
         // GET: Movies/Create
         public IActionResult Create()
         {
+            ViewData["catagoryName"] = new SelectList(_context.Catagorys, "name", "catagoryID");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace MovieManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,movieName,releaseDate,directorName,contactAdress,movieLanguage,catagoryID")] Movie movie)
+        public async Task<IActionResult> Create([Bind("movieID,movieName,releaseDate,directorName,contactAdress,movieLanguage,catagoryID")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace MovieManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
             return View(movie);
         }
 
@@ -78,6 +82,7 @@ namespace MovieManager.Controllers
             {
                 return NotFound();
             }
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
             return View(movie);
         }
 
@@ -86,9 +91,9 @@ namespace MovieManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,movieName,releaseDate,directorName,contactAdress,movieLanguage,catagoryID")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("movieID,movieName,releaseDate,directorName,contactAdress,movieLanguage,catagoryID")] Movie movie)
         {
-            if (id != movie.id)
+            if (id != movie.movieID)
             {
                 return NotFound();
             }
@@ -102,7 +107,7 @@ namespace MovieManager.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.id))
+                    if (!MovieExists(movie.movieID))
                     {
                         return NotFound();
                     }
@@ -113,6 +118,7 @@ namespace MovieManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
             return View(movie);
         }
 
@@ -125,7 +131,8 @@ namespace MovieManager.Controllers
             }
 
             var movie = await _context.Movies
-                .FirstOrDefaultAsync(m => m.id == id);
+                .Include(m => m.catagory)
+                .FirstOrDefaultAsync(m => m.movieID == id);
             if (movie == null)
             {
                 return NotFound();
@@ -147,7 +154,7 @@ namespace MovieManager.Controllers
 
         private bool MovieExists(int id)
         {
-            return _context.Movies.Any(e => e.id == id);
+            return _context.Movies.Any(e => e.movieID == id);
         }
     }
 }

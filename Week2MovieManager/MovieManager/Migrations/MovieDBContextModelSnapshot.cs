@@ -19,9 +19,24 @@ namespace MovieManager.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MovieManager.Data.Movie", b =>
+            modelBuilder.Entity("MovieManager.Models.Catagory", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("catagoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("catagoryID");
+
+                    b.ToTable("Catagorys");
+                });
+
+            modelBuilder.Entity("MovieManager.Models.Movie", b =>
+                {
+                    b.Property<int>("movieID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -44,27 +59,20 @@ namespace MovieManager.Migrations
                     b.Property<DateTime>("releaseDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("id");
+                    b.HasKey("movieID");
+
+                    b.HasIndex("catagoryID");
 
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("MovieManager.Models.Catagory", b =>
+            modelBuilder.Entity("MovieManager.Models.Movie", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Catagorys");
+                    b.HasOne("MovieManager.Models.Catagory", "catagory")
+                        .WithMany("movies")
+                        .HasForeignKey("catagoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
