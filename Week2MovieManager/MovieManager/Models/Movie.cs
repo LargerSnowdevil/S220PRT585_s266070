@@ -44,7 +44,7 @@ namespace MovieManager.Models
     {
         public int catagoryID { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Catagory")]
         public String name { get; set; }
 
         public virtual ICollection<Movie> movies { get; set; }

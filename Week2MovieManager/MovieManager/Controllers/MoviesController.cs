@@ -48,7 +48,7 @@ namespace MovieManager.Controllers
         // GET: Movies/Create
         public IActionResult Create()
         {
-            ViewData["catagoryName"] = new SelectList(_context.Catagorys, "name", "catagoryID");
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace MovieManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "name", movie.catagoryID);
             return View(movie);
         }
 
@@ -82,7 +82,7 @@ namespace MovieManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "name", movie.catagoryID);
             return View(movie);
         }
 
@@ -118,7 +118,7 @@ namespace MovieManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "catagoryID", movie.catagoryID);
+            ViewData["catagoryID"] = new SelectList(_context.Catagorys, "catagoryID", "name", movie.catagoryID);
             return View(movie);
         }
 
