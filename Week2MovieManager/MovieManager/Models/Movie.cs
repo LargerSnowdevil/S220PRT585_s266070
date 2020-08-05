@@ -15,7 +15,7 @@ namespace MovieManager.Models
     }
     public class Movie
     {
-        public int id { get; set; }
+        public int movieID { get; set; }
 
         [Display(Name = "Title")]
         public String movieName { get; set; }
@@ -36,5 +36,17 @@ namespace MovieManager.Models
 
         [Display(Name = "Catagory")]
         public int catagoryID { get; set; }
+
+        public virtual Catagory catagory { get; set; }
+    }
+
+    public class Catagory
+    {
+        public int catagoryID { get; set; }
+
+        [Display(Name = "Name")]
+        public String name { get; set; }
+
+        public virtual ICollection<Movie> movies { get; set; }
     }
 }

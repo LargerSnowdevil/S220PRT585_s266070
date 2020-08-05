@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.movieLanguage)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.catagoryID)
+                @Html.DisplayNameFor(model => model.catagory)
             </th>
             <th></th>
         </tr>
@@ -52,12 +52,12 @@
                 @Html.DisplayFor(modelItem => item.movieLanguage)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.catagoryID)
+                @Html.DisplayFor(modelItem => item.catagory.name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.movieID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.movieID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.movieID">Delete</a>
             </td>
         </tr>
 }

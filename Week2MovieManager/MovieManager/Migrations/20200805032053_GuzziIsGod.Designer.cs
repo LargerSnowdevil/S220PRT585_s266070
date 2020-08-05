@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieManager.Data;
 
 namespace MovieManager.Migrations
 {
     [DbContext(typeof(MovieDBContext))]
-    partial class MovieDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200805032053_GuzziIsGod")]
+    partial class GuzziIsGod
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace MovieManager.Migrations
 
             modelBuilder.Entity("MovieManager.Models.Catagory", b =>
                 {
-                    b.Property<int>("catagoryID")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -29,19 +31,19 @@ namespace MovieManager.Migrations
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("catagoryID");
+                    b.HasKey("id");
 
                     b.ToTable("Catagorys");
                 });
 
             modelBuilder.Entity("MovieManager.Models.Movie", b =>
                 {
-                    b.Property<int>("movieID")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("catagoryID")
+                    b.Property<int?>("catagoryIDid")
                         .HasColumnType("int");
 
                     b.Property<string>("contactAdress")
@@ -59,20 +61,18 @@ namespace MovieManager.Migrations
                     b.Property<DateTime>("releaseDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("movieID");
+                    b.HasKey("id");
 
-                    b.HasIndex("catagoryID");
+                    b.HasIndex("catagoryIDid");
 
                     b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("MovieManager.Models.Movie", b =>
                 {
-                    b.HasOne("MovieManager.Models.Catagory", "catagory")
-                        .WithMany("movies")
-                        .HasForeignKey("catagoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MovieManager.Models.Catagory", "catagoryID")
+                        .WithMany("Movies")
+                        .HasForeignKey("catagoryIDid");
                 });
 #pragma warning restore 612, 618
         }
