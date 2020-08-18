@@ -75,8 +75,14 @@ namespace MovieManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(catagory);
-                await _context.SaveChangesAsync();
+                var efModel = new Catagory()
+                {
+                    catagoryID = catagory.catagoryID,
+                    name = catagory.name
+                };
+                _context.Catagorys.Add(efModel);
+                _context.SaveChanges();
+
                 return RedirectToAction(nameof(Index));
             }
             return View(catagory);
@@ -90,12 +96,19 @@ namespace MovieManager.Controllers
                 return NotFound();
             }
 
-            var catagory = await _context.Catagorys.FindAsync(id);
-            if (catagory == null)
+            var efModel = _context.Catagorys.Find(id);
+            if (efModel == null)
             {
                 return NotFound();
             }
-            return View(catagory);
+
+            var catModel = new CatagoryModel()
+            {
+                catagoryID = efModel.catagoryID,
+                name = efModel.name
+            };
+
+            return View(catModel);
         }
 
         // POST: Catagories/Edit/5
@@ -114,8 +127,9 @@ namespace MovieManager.Controllers
             {
                 try
                 {
-                    _context.Update(catagory);
-                    await _context.SaveChangesAsync();
+                    var efModel = _context.Catagorys.Find(catagory.catagoryID);
+                    efModel.name = catagory.name;
+                    _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
