@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MovieManager.Models.Movie>
+﻿@model IEnumerable<MovieManager.Models.MovieModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.movieLanguage)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.catagory.name)
+                @Html.DisplayFor(modelItem => item.catagory)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.movieID">Edit</a> |

@@ -155,14 +155,19 @@ namespace MovieManager.Controllers
                 return NotFound();
             }
 
-            var catagory = await _context.Catagorys
-                .FirstOrDefaultAsync(m => m.catagoryID == id);
-            if (catagory == null)
+            var efModel = _context.Catagorys.Find(id);
+            if (efModel == null)
             {
                 return NotFound();
             }
 
-            return View(catagory);
+            var catModel = new CatagoryModel()
+            {
+                catagoryID = efModel.catagoryID,
+                name = efModel.name
+            };
+
+            return View(catModel);
         }
 
         // POST: Catagories/Delete/5
