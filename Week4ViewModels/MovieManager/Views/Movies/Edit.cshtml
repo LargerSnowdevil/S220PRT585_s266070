@@ -1,0 +1,59 @@
+﻿@model MovieManager.Models.Movie
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="movieID" />
+            <div class="form-group">
+                <label asp-for="movieName" class="control-label"></label>
+                <input asp-for="movieName" class="form-control" />
+                <span asp-validation-for="movieName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="releaseDate" class="control-label"></label>
+                <input asp-for="releaseDate" class="form-control" />
+                <span asp-validation-for="releaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="directorName" class="control-label"></label>
+                <input asp-for="directorName" class="form-control" />
+                <span asp-validation-for="directorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contactAdress" class="control-label"></label>
+                <input asp-for="contactAdress" class="form-control" />
+                <span asp-validation-for="contactAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="movieLanguage" class="control-label"></label>
+                <select asp-for="movieLanguage" class="form-control"></select>
+                <span asp-validation-for="movieLanguage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="catagory.name" class="control-label"></label>
+                <select asp-for="catagoryID" class="form-control" asp-items="ViewBag.catagoryID"></select>
+                <span asp-validation-for="catagoryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
