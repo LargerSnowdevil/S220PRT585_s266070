@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AngularAPIApp.Models
+namespace AngularApiApp._BLL.Models
 {
-    public class Category
+    public class CategoryBLLModel
     {
-        public int Id { get; set; }
+        public int CategoryId { get; set; }
 
         public String Name { get; set; }
 
