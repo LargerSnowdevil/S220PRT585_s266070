@@ -1,11 +1,11 @@
 {
-  "name": "angular_app",
+  "name": "angularapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng run Angular_App:server:dev",
+    "build:ssr": "ng run AngularApp:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
