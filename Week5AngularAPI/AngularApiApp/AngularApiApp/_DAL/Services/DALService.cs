@@ -64,7 +64,7 @@ namespace AngularApiApp._DAL.Services
         {
             if (_context.Categorys.Find(categoryId) != null)
             {
-                _context.Remove(categoryId);
+                _context.Remove(_context.Categorys.Find(categoryId));
                 _context.SaveChanges();
             } else
             {
@@ -76,7 +76,7 @@ namespace AngularApiApp._DAL.Services
         {
             if (_context.Products.Find(productId) != null)
             {
-                _context.Remove(productId);
+                _context.Remove(_context.Products.Find(productId));
                 _context.SaveChanges();
             }
             else
