@@ -9,9 +9,9 @@ namespace AngularApiApp._DAL.Services
 {
     public class DALContext : DbContext
     {
-        public DALContext(DbContextOptions<DALContext> options) : base(options)
+        public DALContext(DbContextOptions<DALContext> options) : base(options) 
         {
-
+            
         }
 
         public DbSet<Product> Products { get; set; }
