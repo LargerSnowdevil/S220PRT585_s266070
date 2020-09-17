@@ -1,5 +1,6 @@
 ﻿using AngularApiApp._BLL.Models;
 using AngularApiApp._DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 using System;
 using System.Collections.Generic;
@@ -66,7 +67,8 @@ namespace AngularApiApp._DAL.Services
             {
                 _context.Remove(_context.Categorys.Find(categoryId));
                 _context.SaveChanges();
-            } else
+            }
+            else
             {
                 //Todo Throw error here
             }
@@ -108,17 +110,15 @@ namespace AngularApiApp._DAL.Services
 
             foreach (var item in efProducts)
             {
+                var temp = _context.Categorys.Find(item.CategoryId);
+
                 BLLProducts.Add(new ProductBLLModel()
                 {
                     ProductId = item.ProductId,
                     Name = item.Name,
                     Quantity = item.Quantity,
                     Language = item.Language,
-                    Category = new CategoryBLLModel() {
-                        CategoryId = item.Category.CategoryId,
-                        Name = item.Category.Name,
-                        Code = item.Category.Code
-                    }
+                    Category = new CategoryBLLModel { CategoryId = temp.CategoryId, Code = temp.Code, Name = temp.Name}
                 });
             }
             return BLLProducts;
@@ -139,6 +139,7 @@ namespace AngularApiApp._DAL.Services
         public ProductBLLModel GetProduct(int productId)
         {
             var item = _context.Products.Find(productId);
+            var category = _context.Categorys.Find(item.CategoryId);
 
             return new ProductBLLModel()
             {
@@ -146,45 +147,37 @@ namespace AngularApiApp._DAL.Services
                 Name = item.Name,
                 Quantity = item.Quantity,
                 Language = item.Language,
-                Category = new CategoryBLLModel()
-                {
-                    CategoryId = item.Category.CategoryId,
-                    Name = item.Category.Name,
-                    Code = item.Category.Code
-                }
+                Category = new CategoryBLLModel { CategoryId = category.CategoryId, Code = category.Code, Name = category.Name }
             };
         }
 
         public void UpdateCategory(CategoryBLLModel category)
         {
-            if (_context.Categorys.Find(category.CategoryId) != null)
-            {
-                var efCategory = new Category()
-                {
-                    CategoryId = category.CategoryId,
-                    Name = category.Name,
-                    Code = category.Code
-                };
+            Category DalCategory = _context.Categorys.Find(category.CategoryId);
 
-                _context.Categorys.Update(efCategory);
+            if (DalCategory != null)
+            {
+                DalCategory.Name = category.Name;
+                DalCategory.Code = category.Code;
+
+                _context.Categorys.Update(DalCategory);
                 _context.SaveChanges();
             }
         }
 
         public void UpdateProduct(ProductBLLModel product)
         {
-            if (_context.Products.Find(product.ProductId) != null)
+            var Dalproduct = _context.Products.Find(product.ProductId);
+
+            if (Dalproduct != null)
             {
-                var efProduct = new Product()
-                {
-                    ProductId = product.ProductId,
-                    Name = product.Name,
-                    Quantity = product.Quantity,
-                    Language = product.Language,
-                    CategoryId = product.Category.CategoryId,
-                    Category = _context.Categorys.Find(product.Category.CategoryId)
-                };
-                _context.Products.Add(efProduct);
+                Dalproduct.Name = product.Name;
+                Dalproduct.Quantity = product.Quantity;
+                Dalproduct.Language = product.Language;
+                Dalproduct.CategoryId = product.Category.CategoryId;
+                Dalproduct.Category = _context.Categorys.Find(product.Category.CategoryId);
+
+                _context.Products.Add(Dalproduct);
                 _context.SaveChanges();
             }
         }
