@@ -1,0 +1,6 @@
+<ng-container *ngIf="(people$ | async) as person; else loading">
+
+    <h1>{{ person.firstName }}</h1>
+  
+  </ng-container>
+  <ng-template #loading>Loading…</ng-template>
