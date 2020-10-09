@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj": {}
+    "C:\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj": {
+    "C:\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
+        "projectUniqueName": "C:\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
         "projectName": "MVCMovie",
-        "projectPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
-        "packagesPath": "C:\\Users\\LargerSnowdevil\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\obj\\",
+        "projectPath": "C:\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\MVCMovie.csproj",
+        "packagesPath": "C:\\Users\\drac1\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub\\S220PRT585_s266070\\week1HelloWorldMVC\\MVCMovie\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LargerSnowdevil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\drac1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -86,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

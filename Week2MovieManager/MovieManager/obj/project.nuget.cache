@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6MPNbMEY+0UPKuFtN7TFy9nDP6rTjo+CKob0d4pg/kqziFZMINF0jCfDAxh8Zy/rdhgG/FbDHGWtNX9G/ooNZw==",
+  "dgSpecHash": "8fFMveNsXEGUqVEB4jJBRmEyYDfF1dYC1aByJ1aIPyomt0fOwZ3zROJaNXmaJsTQT8TUxI4UPNvciVOuouMd8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
+  "projectFilePath": "C:\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\drac1\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\drac1\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -8506,11 +8506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
+      "projectUniqueName": "C:\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
       "projectName": "MovieManager",
-      "projectPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
+      "projectPath": "C:\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\MovieManager.csproj",
       "packagesPath": "C:\\Users\\drac1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drac1\\Documents\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\obj\\",
+      "outputPath": "C:\\GitHub\\S220PRT585_s266070\\Week2MovieManager\\MovieManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\drac1\\AppData\\Roaming\\NuGet\\NuGet.Config",
